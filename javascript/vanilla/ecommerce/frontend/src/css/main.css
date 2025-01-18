@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #f0c040;
+  --secondary-color: #203040;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #808080;
+  --light-gray: #404040;
+  --success-color: #40c040;
+  --error-color: #c04040;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
+}
+
+body {
+  height: 100vh;
+  font: 1.6rem Helvetica, Arial;
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button,
+select,
+textarea {
+  font: 1.6rem helvetica;
+  padding: 1rem;
+  border: 0.1rem var(--gray) solid;
+  border-radius: 0.5rem;
+}
+
+input:hover,
+button:hover {
+  border: 0.1rem var(--light-gray) solid;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 16, 16, 0.5);
+}
+
+.overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.overlay > div {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 40rem;
+}
+
+.overlay > div > * {
+  margin: 2rem;
+}
+
+.fw {
+  width: 100%;
+}
+
+.success {
+  color: var(--success-color);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+header a {
+  color: var(--white);
+  text-decoration: none;
+  padding-right: 1rem;
+}
+
+header a:hover {
+  color: var(--primary-color);
+}
+
+.brand a {
+  font-weight: bold;
+  font-size: 3rem;
+  padding-left: 1rem;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
